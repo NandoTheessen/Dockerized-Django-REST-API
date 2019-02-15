@@ -24,11 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
-    ALLOWED_HOSTS = [os.environ['SITENAME']]
+    ALLOWED_HOSTS = [os.environ['SITENAME'], 'localhost', '0.0.0.0']
 else:
     DEBUG = True
     SECRET_KEY = 'f2v&a$!z51%uo0tk803y$j=(-ixth(l$(z^bv$nm25x2z74dd)'
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['localhost', '0.0.0.0']
+
+APPEND_SLASH = False
 
 REST_FRAMEWORK = {
     # When you enable API versioning, the request.version attribute will
