@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.test import TestCase
 from rest_framework.test import APITestCase, APIClient
 from rest_framework.views import status
@@ -26,7 +27,7 @@ class GetAllSongsTest(BaseViewTest):
 
     def test_get_all_songs(self):
 
-        reponse = self.client.get(
+        response = self.client.get(
             reverse("songs-all", kwargs={"version": "v1"})
         )
 
